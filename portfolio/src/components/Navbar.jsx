@@ -5,6 +5,8 @@ import { BsGithub } from "react-icons/bs";
 import { RiInstagramFill } from "react-icons/ri";
 import { FaLinkedin } from "react-icons/fa6";
 import NavLink from "./NavLink";
+import { motion } from "framer-motion";
+import { usePathname } from "next/navigation";
 
 const links = [
   {
@@ -27,10 +29,62 @@ const links = [
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
+  const pathName = usePathname();
+
+  const topVariants = {
+    closed: {
+      rotete: 0,
+    },
+    opened: {
+      rotate: 45,
+    },
+  };
+
+  const centerVariants = {
+    closed: {
+      opacity: 1,
+    },
+    opened: {
+      opacity: 0,
+    },
+  };
+
+  const bottomVariants = {
+    closed: {
+      rotete: 0,
+    },
+    opened: {
+      rotate: -45,
+    },
+  };
+
+  const listVariants = {
+    closed: {
+      x: "100vw",
+    },
+    opened: {
+      x: 0,
+      transition: {
+        when: "beforeChildren",
+        staggerChildren: 0.2,
+      },
+    },
+  };
+
+  const listItemVariants = {
+    closed: {
+      x: -10,
+      opacity: 0,
+    },
+    opened: {
+      x: 0,
+      opacity: 1,
+    },
+  };
 
   return (
     <>
-      <nav className="bg-teal-500 h-full flex items-center justify-between px-4 sm:px-8 md:px-12 lg:px-20 xl:px-48">
+      <nav className="h-full flex items-center justify-between px-4 sm:px-8 md:px-12 lg:px-20 xl:px-48">
         {/* Nav Links */}
         <div className="hidden md:flex items-center justify-center gap-5 xl:w-[36%]">
           {links.map((link) => (
@@ -45,7 +99,7 @@ export default function Navbar() {
           </Link>
         </div>
         {/* Social Icons */}
-        <div className="hidden md:flex items-center justify-center gap-5 xl:w-[36%] text-white">
+        <div className="hidden md:flex items-center justify-center gap-5 xl:w-[36%] text-black">
           <Link href="https://www.linkedin.com/in/andry-ariadi/">
             <FaLinkedin size={25} />
           </Link>
@@ -59,10 +113,10 @@ export default function Navbar() {
         {/* Menu Bar */}
         <div className="md:hidden">
           {/* Menu Btn */}
-          <button className="flex flex-col items-center justify-between w-10 h-7 z-50 relative" onClick={() => setOpen(!open)}>
-            <div className="w-10 h-1 bg-gray-400 rounded"></div>
-            <div className="w-10 h-1 bg-gray-400 rounded"></div>
-            <div className="w-10 h-1 bg-gray-400 rounded"></div>
+          <button className="flex flex-col items-center justify-between w-10 h-8 z-50 relative" onClick={() => setOpen(!open)}>
+            <motion.div variants={topVariants} animate={open ? "opened" : "closed"} className="w-10 h-1 bg-black rounded origin-left"></motion.div>
+            <motion.div variants={centerVariants} animate={open ? "opened" : "closed"} className="w-10 h-1 bg-black rounded"></motion.div>
+            <motion.div variants={bottomVariants} animate={open ? "opened" : "closed"} className="w-10 h-1 bg-black rounded origin-left"></motion.div>
           </button>
           {/* <label className="btn btn-circle swap swap-rotate z-50 relative">
             <input type="checkbox" onClick={() => setOpen(!open)} />
@@ -75,13 +129,15 @@ export default function Navbar() {
           </label> */}
           {/* Menu List */}
           {open && (
-            <div className="absolute bg-rose-500 top-0 left-0 w-screen h-screen flex flex-col items-center justify-center gap-8">
+            <motion.div variants={listVariants} initial="closed" animate="opened" className="absolute z-10 bg-gradient-to-b from-amber-100 to-slate-200 top-0 left-0 w-screen h-screen flex flex-col items-center justify-center gap-8">
               {links.map((link) => (
-                <Link key={link.title} href={link.url} className="btn btn-ghost btn-lg rounded-btn text-3xl">
-                  {link.title}
-                </Link>
+                <motion.div variants={listItemVariants} key={link.title}>
+                  <Link href={link.url} className={`nav-link text-xl text-black font-semibold px-3 rounded-md ${pathName === link.url && "bg-black text-white"}`}>
+                    {link.title}
+                  </Link>
+                </motion.div>
               ))}
-            </div>
+            </motion.div>
           )}
         </div>
       </nav>

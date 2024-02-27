@@ -17,7 +17,7 @@
   font-size: 16px;
 }
 
-.nav-link::before,
+/* .nav-link::before, */
 .nav-link::after {
   content: "";
   position: absolute;
@@ -29,12 +29,12 @@
   transition: all 0.6s ease;
 }
 
-.nav-link::before {
+/* .nav-link::before {
   top: 0;
   left: 3.7px;
   transform-origin: left;
   height: 3px;
-}
+} */
 
 .nav-link::after {
   bottom: 0;
