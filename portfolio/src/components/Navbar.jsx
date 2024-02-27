@@ -32,20 +32,20 @@ export default function Navbar() {
     <>
       <nav className="bg-teal-500 h-full flex items-center justify-between px-4 sm:px-8 md:px-12 lg:px-20 xl:px-48">
         {/* Nav Links */}
-        <div className="hidden md:flex items-center justify-center gap-5 w-[36%] bg-amber-500">
+        <div className="hidden md:flex items-center justify-center gap-5 xl:w-[36%]">
           {links.map((link) => (
             <NavLink key={link.title} link={link} />
           ))}
         </div>
         {/* Logo */}
-        <div className="md:hidden lg:flex items-center justify-center w-[36%]">
+        <div className="md:hidden lg:flex items-center xl:justify-center xl:w-[36%]">
           <Link href="/" className="flex items-center justify-center gap-1 text-sm font-semibold bg-black rounded-md p-1">
             <span className="text-white">Andry</span>
             <span className="bg-white flex items-center justify-center w-12 h-8 rounded text-black">Ariadi</span>
           </Link>
         </div>
         {/* Social Icons */}
-        <div className="hidden md:flex items-center justify-center gap-5 w-[36%] text-white">
+        <div className="hidden md:flex items-center justify-center gap-5 xl:w-[36%] text-white">
           <Link href="https://www.linkedin.com/in/andry-ariadi/">
             <FaLinkedin size={25} />
           </Link>
