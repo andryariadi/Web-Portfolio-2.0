@@ -1,6 +1,8 @@
 "use client";
 
-import { motion } from "framer-motion";
+import BrainSvg from "@/components/BrainSvg";
+import { motion, useScroll } from "framer-motion";
+import { useRef } from "react";
 
 const skills = [
   {
@@ -82,12 +84,18 @@ const skills = [
 ];
 
 export default function AboutPage() {
+  const containerRef = useRef();
+
+  const { scrollYProgress } = useScroll({
+    container: containerRef,
+  });
+
   return (
     <>
       <motion.div className="h-full" initial={{ y: "-200vh" }} animate={{ y: "0%" }} transition={{ duration: 1 }}>
-        <main className="bg-amber-500">
+        <main className="bg-amber-500 h-full overflow-scroll lg:flex" ref={containerRef}>
           {/* Text Container */}
-          <div className="bg-rose-500 p-4 sm:p-8 md:p-12 lg:p-20 xl:p-48 flex flex-col gap-24 md:gap-32 lg:gap-48 xl:gap-64">
+          <div className="bg-rose-500 p-4 sm:p-8 md:p-12 lg:p-20 xl:p-20 lg:pr-0 flex flex-col gap-24 md:gap-32 lg:gap-48 xl:gap-64 lg:w-2/3 xl:w-1/2">
             {/* Bio Container */}
             <div className="bg-violet-500 flex flex-col justify-center gap-10 text-black">
               <h1 className="font-bold text-2xl">Biography</h1>
@@ -145,7 +153,7 @@ export default function AboutPage() {
                     <span className="p-3 text-rose-500 font-semibold text-sm">February 2024</span>
                   </div>
                   {/* Center */}
-                  <div className="w-1/6 bg-rose-500">
+                  <div className="w-1/6 bg-rose-500 flex items-center justify-center">
                     {/* Line */}
                     <div className="relative w-1 h-full bg-gray-600 rounded">
                       {/* Line Circle */}
@@ -153,51 +161,53 @@ export default function AboutPage() {
                     </div>
                   </div>
                   {/* Right */}
-                  <div className="w-1/3 bg-emerald-500">Right</div>
+                  <div className="w-1/3 bg-emerald-500"></div>
                 </div>
                 {/* Project list item */}
                 <div className="flex justify-between h-48">
                   {/* Left */}
-                  <div className="w-1/3">Left</div>
+                  <div className="w-1/3 bg-teal-500"></div>
                   {/* Center */}
-                  <div className="w-1/6">
+                  <div className="w-1/6 flex items-center justify-center bg-rose-500">
                     {/* Line */}
-                    <div>
+                    <div className="relative w-1 h-full bg-gray-600 rounded">
                       {/* Line Circle */}
-                      <div>Circle</div>
+                      <div className="absolute h-5 w-5 rounded-full bg-white ring-4 ring-rose-500 -left-2"></div>
                     </div>
                   </div>
                   {/* Right */}
-                  <div className="w-1/3">
-                    <h6>iBlog</h6>
-                    <p>Web-application to post your blog</p>
-                    <span>February 2024</span>
+                  <div className="w-1/3 bg-emerald-500">
+                    <h6 className="bg-white p-3 font-semibold rounded-b-lg rounded-s-lg">iBlog</h6>
+                    <p className="p-3 text-sm italic">Web-application to post your blog</p>
+                    <span className="p-3 text-rose-500 font-semibold text-sm">February 2024</span>
                   </div>
                 </div>
                 {/* Project list item */}
                 <div className="flex justify-between h-48">
                   {/* Left */}
-                  <div className="w-1/3">
-                    <h6>uDo</h6>
-                    <p>Web-application to list your activities</p>
-                    <span>February 2024</span>
+                  <div className="w-1/3 bg-teal-500">
+                    <h6 className="bg-white p-3 font-semibold rounded-b-lg rounded-s-lg">uDo</h6>
+                    <p className="p-3 text-sm italic">Web-application to list your activities</p>
+                    <span className="p-3 text-rose-500 font-semibold text-sm">February 2024</span>
                   </div>
                   {/* Center */}
-                  <div className="w-1/6">
+                  <div className="w-1/6 flex items-center justify-center bg-rose-500">
                     {/* Line */}
-                    <div>
+                    <div className="relative w-1 h-full bg-gray-600 rounded">
                       {/* Line Circle */}
-                      <div>Circle</div>
+                      <div className="absolute h-5 w-5 rounded-full bg-white ring-4 ring-rose-500 -left-2"></div>
                     </div>
                   </div>
                   {/* Right */}
-                  <div className="w-1/3">Right</div>
+                  <div className="w-1/3 bg-emerald-500"></div>
                 </div>
               </div>
             </div>
           </div>
           {/* SVG Container */}
-          <div className="bg-teal-500 hidden">Andry</div>
+          <div className="bg-teal-500 lg:block w-1/3 xl:w-1/2 sticky top-0 z-30">
+            <BrainSvg scrollYProgress={scrollYProgress} />
+          </div>
         </main>
       </motion.div>
     </>
