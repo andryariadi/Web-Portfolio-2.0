@@ -1,6 +1,7 @@
 "use client";
 
 import BrainSvg from "@/components/BrainSvg";
+import { fadeIn } from "@/libs/variants";
 import { motion, useInView, useScroll } from "framer-motion";
 import { useRef } from "react";
 
@@ -97,15 +98,13 @@ export default function AboutPage() {
     container: containerRef,
   });
 
-  const isSkillRefInView = useInView(skillRef, { margin: "-100px" });
-  const isProjectRefInView = useInView(projectRef, { margin: "-100px" });
+  const isSkillRefInView = useInView(skillRef, { margin: "-100px", once: true });
+  const isProjectRefInView = useInView(projectRef, { margin: "-100px", once: true });
   const isProjectListItemInView1 = useInView(projectListItemRef1, { margin: "-100px", once: true });
   const isProjectListItemInView2 = useInView(projectListItemRef2, { margin: "-100px", once: true });
   const isProjectListItemInView3 = useInView(projectListItemRef3, { margin: "-100px", once: true });
   const isProjectListItemInView4 = useInView(projectListItemRef4, { margin: "-100px", once: true });
   const isProjectListItemInView5 = useInView(projectListItemRef5, { margin: "-100px", once: true });
-
-  console.log({ isSkillRefInView, isProjectRefInView }), "<----diaboutpage";
 
   return (
     <>
@@ -115,16 +114,29 @@ export default function AboutPage() {
           <div className="bg-rose-500 p-4 sm:p-8 md:p-12 lg:p-20 xl:p-20 lg:pr-0 flex flex-col gap-24 md:gap-32 lg:gap-48 xl:gap-64 lg:w-2/3 xl:w-1/2">
             {/* Bio Container */}
             <div className="bg-violet-500 flex flex-col justify-center gap-10 text-black">
-              <h1 className="font-bold text-2xl">Biography</h1>
+              <motion.h1 variants={fadeIn("right", 0.2)} initial="hidden" whileInView={"show"} viewport={{ once: true, amount: 0.7 }} className="font-bold text-2xl">
+                Biography
+              </motion.h1>
               {/* Description */}
-              <p className="text-lg">
+              <motion.p variants={fadeIn("right", 0.4)} initial="hidden" whileInView={"show"} viewport={{ once: true, amount: 0.7 }} className="text-lg">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae minus facilis quis nesciunt dolor! Natus sit perferendis modi corporis cupiditate maiores similique, consequatur eligendi repellendus nemo debitis, quam repellat
                 quae! Nulla animi ullam soluta accusantium dolore? Assumenda blanditiis dignissimos nihil commodi harum eligendi illo doloremque distinctio, odit quia. Iusto officia obcaecati neque delectus quas. Excepturi quisquam natus
                 corrupti fugiat nobis?
-              </p>
-              <span className="italic">Lorem ipsum dolor sit amet consectetur adipisicing elit.</span>
+              </motion.p>
+              <motion.span variants={fadeIn("right", 0.6)} initial="hidden" whileInView={"show"} viewport={{ once: true, amount: 0.7 }} className="italic">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              </motion.span>
               {/* SVG Scroll */}
-              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" width={50} height={50}>
+              <motion.svg
+                initial={{ opacity: 0.2, y: 0 }}
+                animate={{ opacity: 1, y: "10px" }}
+                transition={{ repeat: Infinity, duration: 3, ease: "easeInOut" }}
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                width={50}
+                height={50}
+              >
                 <path
                   d="M5 15C5 16.8565 5.73754 18.6371 7.05029 19.9498C8.36305 21.2626 10.1435 21.9999 12 21.9999C13.8565 21.9999 15.637 21.2626 16.9498 19.9498C18.2625 18.6371 19 16.8565 19 15V9C19 7.14348 18.2625 5.36305 16.9498 4.05029C15.637 2.73754 13.8565 2 12 2C10.1435 2 8.36305 2.73754 7.05029 4.05029C5.73754 5.36305 5 7.14348 5 9V15Z"
                   stroke="#000000"
@@ -132,7 +144,7 @@ export default function AboutPage() {
                 ></path>
                 <path d="M12 6V14" stroke="#000000" strokeWidth="1"></path>
                 <path d="M15 11L12 14L9 11" stroke="#000000" strokeWidth="1"></path>
-              </svg>
+              </motion.svg>
             </div>
             {/* Skill Container */}
             <div className="bg-sky-500 flex flex-col justify-center gap-10 text-black" ref={skillRef}>
@@ -140,7 +152,7 @@ export default function AboutPage() {
                 Skills
               </motion.h1>
               {/* Skill Lists */}
-              <motion.div initial={{ x: "-300px" }} animate={isSkillRefInView ? { x: 0 } : {}} className="flex gap-5 flex-wrap">
+              <motion.div initial={{ x: "-300px" }} animate={isSkillRefInView ? { x: 0 } : {}} transition={{ delay: 0.3 }} className="flex gap-5 flex-wrap">
                 {skills.map((skill) => (
                   <div key={skill.id} className="p-2 rounded text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black transition-all duration-300">
                     {skill.name}
@@ -148,7 +160,16 @@ export default function AboutPage() {
                 ))}
               </motion.div>
               {/* SVG Scroll */}
-              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" width={50} height={50}>
+              <motion.svg
+                initial={{ opacity: 0.2, y: 0 }}
+                animate={{ opacity: 1, y: "10px" }}
+                transition={{ repeat: Infinity, duration: 3, ease: "easeInOut" }}
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                width={50}
+                height={50}
+              >
                 <path
                   d="M5 15C5 16.8565 5.73754 18.6371 7.05029 19.9498C8.36305 21.2626 10.1435 21.9999 12 21.9999C13.8565 21.9999 15.637 21.2626 16.9498 19.9498C18.2625 18.6371 19 16.8565 19 15V9C19 7.14348 18.2625 5.36305 16.9498 4.05029C15.637 2.73754 13.8565 2 12 2C10.1435 2 8.36305 2.73754 7.05029 4.05029C5.73754 5.36305 5 7.14348 5 9V15Z"
                   stroke="#000000"
@@ -156,7 +177,7 @@ export default function AboutPage() {
                 ></path>
                 <path d="M12 6V14" stroke="#000000" strokeWidth="1"></path>
                 <path d="M15 11L12 14L9 11" stroke="#000000" strokeWidth="1"></path>
-              </svg>
+              </motion.svg>
             </div>
             {/* Project Container */}
             <div className="bg-fuchsia-500 flex flex-col justify-center gap-10 text-black pb-48" ref={projectRef}>
