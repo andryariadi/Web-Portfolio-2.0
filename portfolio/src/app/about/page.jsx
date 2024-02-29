@@ -1,7 +1,7 @@
 "use client";
 
 import BrainSvg from "@/components/BrainSvg";
-import { motion, useScroll } from "framer-motion";
+import { motion, useInView, useScroll } from "framer-motion";
 import { useRef } from "react";
 
 const skills = [
@@ -85,10 +85,27 @@ const skills = [
 
 export default function AboutPage() {
   const containerRef = useRef();
+  const skillRef = useRef();
+  const projectRef = useRef();
+  const projectListItemRef1 = useRef();
+  const projectListItemRef2 = useRef();
+  const projectListItemRef3 = useRef();
+  const projectListItemRef4 = useRef();
+  const projectListItemRef5 = useRef();
 
   const { scrollYProgress } = useScroll({
     container: containerRef,
   });
+
+  const isSkillRefInView = useInView(skillRef, { margin: "-100px" });
+  const isProjectRefInView = useInView(projectRef, { margin: "-100px" });
+  const isProjectListItemInView1 = useInView(projectListItemRef1, { margin: "-100px", once: true });
+  const isProjectListItemInView2 = useInView(projectListItemRef2, { margin: "-100px", once: true });
+  const isProjectListItemInView3 = useInView(projectListItemRef3, { margin: "-100px", once: true });
+  const isProjectListItemInView4 = useInView(projectListItemRef4, { margin: "-100px", once: true });
+  const isProjectListItemInView5 = useInView(projectListItemRef5, { margin: "-100px", once: true });
+
+  console.log({ isSkillRefInView, isProjectRefInView }), "<----diaboutpage";
 
   return (
     <>
@@ -118,16 +135,18 @@ export default function AboutPage() {
               </svg>
             </div>
             {/* Skill Container */}
-            <div className="bg-sky-500 flex flex-col justify-center gap-10 text-black">
-              <h1 className="font-bold text-2xl">Skills</h1>
+            <div className="bg-sky-500 flex flex-col justify-center gap-10 text-black" ref={skillRef}>
+              <motion.h1 initial={{ x: "-300px" }} animate={isSkillRefInView ? { x: 0 } : {}} transition={{ delay: 0.2 }} className="font-bold text-2xl">
+                Skills
+              </motion.h1>
               {/* Skill Lists */}
-              <div className="flex gap-5 flex-wrap">
+              <motion.div initial={{ x: "-300px" }} animate={isSkillRefInView ? { x: 0 } : {}} className="flex gap-5 flex-wrap">
                 {skills.map((skill) => (
                   <div key={skill.id} className="p-2 rounded text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black transition-all duration-300">
                     {skill.name}
                   </div>
                 ))}
-              </div>
+              </motion.div>
               {/* SVG Scroll */}
               <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" width={50} height={50}>
                 <path
@@ -140,66 +159,106 @@ export default function AboutPage() {
               </svg>
             </div>
             {/* Project Container */}
-            <div className="bg-fuchsia-500 flex flex-col justify-center gap-10 text-black">
-              <h1 className="font-bold text-2xl">Projects</h1>
+            <div className="bg-fuchsia-500 flex flex-col justify-center gap-10 text-black pb-48" ref={projectRef}>
+              <motion.h1 initial={{ y: "300px" }} animate={isProjectRefInView ? { y: 0 } : {}} transition={{ delay: 0.2 }} className="font-bold text-2xl">
+                Projects
+              </motion.h1>
               {/* Project Lists */}
-              <div>
+              <div className="bg-indigo-500">
                 {/* Project list item */}
-                <div className="flex justify-between h-48">
+                <div ref={projectListItemRef1} className="flex justify-between h-48">
                   {/* Left */}
-                  <div className="w-1/3 bg-teal-500">
+                  <motion.div initial={{ y: "300px" }} animate={isProjectListItemInView1 ? { y: 0 } : {}} transition={{ delay: 0.3 }} className="w-1/3 bg-teal-500">
                     <h6 className="bg-white p-3 font-semibold rounded-b-lg rounded-s-lg">iBikez</h6>
                     <p className="p-3 text-sm italic">Web-application (e-commerce) to buy the cycle you like</p>
                     <span className="p-3 text-rose-500 font-semibold text-sm">February 2024</span>
-                  </div>
+                  </motion.div>
                   {/* Center */}
-                  <div className="w-1/6 bg-rose-500 flex items-center justify-center">
+                  <motion.div initial={{ y: "300px" }} animate={isProjectListItemInView1 ? { y: 0 } : {}} transition={{ delay: 0.3 }} className="w-1/6 bg-rose-500 flex items-center justify-center">
                     {/* Line */}
                     <div className="relative w-1 h-full bg-gray-600 rounded">
                       {/* Line Circle */}
                       <div className="absolute h-5 w-5 rounded-full bg-white ring-4 ring-rose-500 -left-2"></div>
                     </div>
-                  </div>
+                  </motion.div>
                   {/* Right */}
-                  <div className="w-1/3 bg-emerald-500"></div>
+                  <motion.div initial={{ y: "300px" }} animate={isProjectListItemInView1 ? { y: 0 } : {}} transition={{ delay: 0.3 }} className="w-1/3 bg-emerald-500"></motion.div>
                 </div>
                 {/* Project list item */}
-                <div className="flex justify-between h-48">
+                <div ref={projectListItemRef2} className="flex justify-between h-48">
                   {/* Left */}
-                  <div className="w-1/3 bg-teal-500"></div>
+                  <motion.div initial={{ y: "300px" }} animate={isProjectListItemInView2 ? { y: 0 } : {}} transition={{ delay: 0.4 }} className="w-1/3 bg-teal-500"></motion.div>
                   {/* Center */}
-                  <div className="w-1/6 flex items-center justify-center bg-rose-500">
+                  <motion.div initial={{ y: "300px" }} animate={isProjectListItemInView2 ? { y: 0 } : {}} transition={{ delay: 0.4 }} className="w-1/6 flex items-center justify-center bg-rose-500">
                     {/* Line */}
                     <div className="relative w-1 h-full bg-gray-600 rounded">
                       {/* Line Circle */}
                       <div className="absolute h-5 w-5 rounded-full bg-white ring-4 ring-rose-500 -left-2"></div>
                     </div>
-                  </div>
+                  </motion.div>
                   {/* Right */}
-                  <div className="w-1/3 bg-emerald-500">
+                  <motion.div initial={{ y: "300px" }} animate={isProjectListItemInView2 ? { y: 0 } : {}} transition={{ delay: 0.4 }} className="w-1/3 bg-emerald-500">
                     <h6 className="bg-white p-3 font-semibold rounded-b-lg rounded-s-lg">iBlog</h6>
                     <p className="p-3 text-sm italic">Web-application to post your blog</p>
                     <span className="p-3 text-rose-500 font-semibold text-sm">February 2024</span>
-                  </div>
+                  </motion.div>
                 </div>
                 {/* Project list item */}
-                <div className="flex justify-between h-48">
+                <div ref={projectListItemRef3} className="flex justify-between h-48">
                   {/* Left */}
-                  <div className="w-1/3 bg-teal-500">
+                  <motion.div initial={{ y: "300px" }} animate={isProjectListItemInView3 ? { y: 0 } : {}} transition={{ delay: 0.5 }} className="w-1/3 bg-teal-500">
                     <h6 className="bg-white p-3 font-semibold rounded-b-lg rounded-s-lg">uDo</h6>
                     <p className="p-3 text-sm italic">Web-application to list your activities</p>
                     <span className="p-3 text-rose-500 font-semibold text-sm">February 2024</span>
-                  </div>
+                  </motion.div>
                   {/* Center */}
-                  <div className="w-1/6 flex items-center justify-center bg-rose-500">
+                  <motion.div initial={{ y: "300px" }} animate={isProjectListItemInView3 ? { y: 0 } : {}} transition={{ delay: 0.5 }} className="w-1/6 flex items-center justify-center bg-rose-500">
                     {/* Line */}
                     <div className="relative w-1 h-full bg-gray-600 rounded">
                       {/* Line Circle */}
                       <div className="absolute h-5 w-5 rounded-full bg-white ring-4 ring-rose-500 -left-2"></div>
                     </div>
-                  </div>
+                  </motion.div>
                   {/* Right */}
-                  <div className="w-1/3 bg-emerald-500"></div>
+                  <motion.div initial={{ y: "300px" }} animate={isProjectListItemInView3 ? { y: 0 } : {}} transition={{ delay: 0.5 }} className="w-1/3 bg-emerald-500"></motion.div>
+                </div>
+                {/* Project list item */}
+                <div ref={projectListItemRef4} className="flex justify-between h-48">
+                  {/* Left */}
+                  <motion.div initial={{ y: "300px" }} animate={isProjectListItemInView4 ? { y: 0 } : {}} transition={{ delay: 0.6 }} className="w-1/3 bg-teal-500"></motion.div>
+                  {/* Center */}
+                  <motion.div initial={{ y: "300px" }} animate={isProjectListItemInView4 ? { y: 0 } : {}} transition={{ delay: 0.6 }} className="w-1/6 flex items-center justify-center bg-rose-500">
+                    {/* Line */}
+                    <div className="relative w-1 h-full bg-gray-600 rounded">
+                      {/* Line Circle */}
+                      <div className="absolute h-5 w-5 rounded-full bg-white ring-4 ring-rose-500 -left-2"></div>
+                    </div>
+                  </motion.div>
+                  {/* Right */}
+                  <motion.div initial={{ y: "300px" }} animate={isProjectListItemInView4 ? { y: 0 } : {}} transition={{ delay: 0.6 }} className="w-1/3 bg-emerald-500">
+                    <h6 className="bg-white p-3 font-semibold rounded-b-lg rounded-s-lg">Evently</h6>
+                    <p className="p-3 text-sm italic">Web-application to post your events and buy the events you like</p>
+                    <span className="p-3 text-rose-500 font-semibold text-sm">January 2024</span>
+                  </motion.div>
+                </div>
+                {/* Project list item */}
+                <div ref={projectListItemRef5} className="flex justify-between h-48">
+                  {/* Left */}
+                  <motion.div initial={{ y: "300px" }} animate={isProjectListItemInView5 ? { y: 0 } : {}} transition={{ delay: 0.8 }} className="w-1/3 bg-teal-500">
+                    <h6 className="bg-white p-3 font-semibold rounded-b-lg rounded-s-lg">CMS-Dashboard</h6>
+                    <p className="p-3 text-sm italic">Web-application CMS dashboard</p>
+                    <span className="p-3 text-rose-500 font-semibold text-sm">December 2023</span>
+                  </motion.div>
+                  {/* Center */}
+                  <motion.div initial={{ y: "300px" }} animate={isProjectListItemInView5 ? { y: 0 } : {}} transition={{ delay: 0.8 }} className="w-1/6 bg-rose-500 flex items-center justify-center">
+                    {/* Line */}
+                    <div className="relative w-1 h-full bg-gray-600 rounded">
+                      {/* Line Circle */}
+                      <div className="absolute h-5 w-5 rounded-full bg-white ring-4 ring-rose-500 -left-2"></div>
+                    </div>
+                  </motion.div>
+                  {/* Right */}
+                  <motion.div initial={{ y: "300px" }} animate={isProjectListItemInView5 ? { y: 0 } : {}} transition={{ delay: 0.8 }} className="w-1/3 bg-emerald-500"></motion.div>
                 </div>
               </div>
             </div>
