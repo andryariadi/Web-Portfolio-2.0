@@ -11,7 +11,7 @@ export default function TransitionProvider({ children }) {
   return (
     <>
       <AnimatePresence mode="wait">
-        <div key={pathName} className="w-full h-screen bg-gradient-to-b from-amber-100 to-slate-200">
+        <div key={pathName} className="w-full h-screen bg-gradient-to-b from-amber-50 to-slate-200">
           {/* motion top */}
           <motion.div className="h-screen w-screen fixed rounded-b-[100px] bg-black z-40" animate={{ height: "0vh" }} exit={{ height: "130vh" }} transition={{ duration: 0.5, ease: "easeOut" }} />
           {/* motion center */}
