@@ -100,13 +100,13 @@ export default function Navbar() {
         </div>
         {/* Social Icons */}
         <div className="hidden md:flex items-center justify-center gap-5 xl:w-[36%] text-black">
-          <Link href="https://www.linkedin.com/in/andry-ariadi/" className="hover:scale-110 transition-all duration-300">
+          <Link href="https://www.linkedin.com/in/andry-ariadi/" className="hover:scale-125 transition-all duration-300">
             <FaLinkedin size={25} />
           </Link>
-          <Link href="https://github.com/andryariadi" className="hover:scale-110 transition-all duration-300">
+          <Link href="https://github.com/andryariadi" className="hover:scale-125 transition-all duration-300">
             <BsGithub size={25} />
           </Link>
-          <Link href="https://www.instagram.com/andry_ariadi/?hl=id" className="hover:scale-110 transition-all duration-300">
+          <Link href="https://www.instagram.com/andry_ariadi/?hl=id" className="hover:scale-125 transition-all duration-300">
             <RiInstagramFill size={25} />
           </Link>
         </div>

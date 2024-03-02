@@ -5,8 +5,8 @@ import { motion } from "framer-motion";
 import { TypeAnimation } from "react-type-animation";
 export default function Home() {
   return (
-    <motion.div className="h-full" initial={{ y: "-200vh" }} animate={{ y: "0%" }} transition={{ duration: 1 }}>
-      <main className="h-full flex flex-col lg:items-center lg:justify-center lg:flex-row gap-3 lg:gap-5 px-4 sm:px-8 md:px-12 lg:px-20 xl:px-48 py-5 ">
+    <motion.main className="h-full" initial={{ y: "-200vh" }} animate={{ y: "0%" }} transition={{ duration: 1 }}>
+      <div className="h-full flex flex-col lg:items-center lg:justify-center lg:flex-row gap-3 lg:gap-5 px-4 sm:px-8 md:px-12 lg:px-20 xl:px-48 py-5 ">
         <div className="w-[29%] h-full flex items-center justify-start">
           <div className="h-1/2 lg:h-[70%] lg:w-full relative">
             <Image src="/images/andryariadi.png" alt="Andry Ariadi" fill className="img-hero object-contain brightness-75 contrast-90 hue-rotate-15 bg-gradient-to-r from-gray-700 to-slate-200" />
@@ -25,7 +25,7 @@ export default function Home() {
             <button className="font-semibold p-3 md:p-4 rounded-lg ring ring-black">Contact Me</button>
           </div>
         </div>
-      </main>
-    </motion.div>
+      </div>
+    </motion.main>
   );
 }
