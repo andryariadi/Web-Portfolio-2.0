@@ -118,7 +118,7 @@ export default function AboutPage() {
                 Biography
               </motion.h1>
               {/* Description */}
-              <motion.p variants={fadeIn("right", 0.4)} initial="hidden" whileInView={"show"} viewport={{ once: true, amount: 0.7 }} className="text-lg text-justify">
+              <motion.p variants={fadeIn("right", 0.4)} initial="hidden" whileInView={"show"} viewport={{ once: true, amount: 0.7 }} className="text-lg font-medium text-justify">
                 I graduated from the Bachelor of Mechanical Engineering program at Malang State University. I previously worked as a HSE and now I am transitioning to a career in the IT field as a Software Developer. Following the
                 completion of the Fullstack Javascript bootcamp, I have acquired the abilities and skills required to develop web and mobile applications.
               </motion.p>
@@ -189,7 +189,7 @@ export default function AboutPage() {
                 <div ref={projectListItemRef1} className="flex gap-5 h-48">
                   {/* Left */}
                   <motion.div initial={{ y: "300px" }} animate={isProjectListItemInView1 ? { y: 0 } : {}} transition={{ delay: 0.3 }} className="w-1/3 ">
-                    <h6 className="bg-white p-3 font-semibold rounded-b-lg rounded-s-lg">iBikez</h6>
+                    <h6 className="bg-gradient-to-r from-purple-200 to-red-200 p-3 font-semibold rounded-b-lg rounded-s-lg">iBikez</h6>
                     <p className="p-3 text-sm italic">Web-application (e-commerce) to buy the cycle you like</p>
                     <span className="p-3 text-rose-500 font-semibold text-sm">February 2024</span>
                   </motion.div>
@@ -198,7 +198,7 @@ export default function AboutPage() {
                     {/* Line */}
                     <div className="relative w-1 h-full bg-gray-600 rounded">
                       {/* Line Circle */}
-                      <div className="absolute h-5 w-5 rounded-full bg-white ring-4 ring-rose-500 -left-2"></div>
+                      <div className="absolute h-5 w-5 rounded-full bg-gradient-to-r from-purple-200 to-red-200 ring-4 ring-rose-500 -left-2"></div>
                     </div>
                   </motion.div>
                   {/* Right */}
@@ -213,12 +213,12 @@ export default function AboutPage() {
                     {/* Line */}
                     <div className="relative w-1 h-full bg-gray-600 rounded">
                       {/* Line Circle */}
-                      <div className="absolute h-5 w-5 rounded-full bg-white ring-4 ring-rose-500 -left-2"></div>
+                      <div className="absolute h-5 w-5 rounded-full bg-gradient-to-r from-purple-200 to-red-200 ring-4 ring-rose-500 -left-2"></div>
                     </div>
                   </motion.div>
                   {/* Right */}
                   <motion.div initial={{ y: "300px" }} animate={isProjectListItemInView2 ? { y: 0 } : {}} transition={{ delay: 0.4 }} className="w-1/3">
-                    <h6 className="bg-white p-3 font-semibold rounded-b-lg rounded-s-lg">iBlog</h6>
+                    <h6 className="bg-gradient-to-r from-purple-200 to-red-200 p-3 font-semibold rounded-b-lg rounded-s-lg">iBlog</h6>
                     <p className="p-3 text-sm italic">Web-application to post your blog</p>
                     <span className="p-3 text-rose-500 font-semibold text-sm">February 2024</span>
                   </motion.div>
@@ -227,7 +227,7 @@ export default function AboutPage() {
                 <div ref={projectListItemRef3} className="flex gap-5 h-48">
                   {/* Left */}
                   <motion.div initial={{ y: "300px" }} animate={isProjectListItemInView3 ? { y: 0 } : {}} transition={{ delay: 0.5 }} className="w-1/3 ">
-                    <h6 className="bg-white p-3 font-semibold rounded-b-lg rounded-s-lg">uDo</h6>
+                    <h6 className="bg-gradient-to-r from-purple-200 to-red-200 p-3 font-semibold rounded-b-lg rounded-s-lg">uDo</h6>
                     <p className="p-3 text-sm italic">Web-application to list your activities</p>
                     <span className="p-3 text-rose-500 font-semibold text-sm">February 2024</span>
                   </motion.div>
@@ -236,7 +236,7 @@ export default function AboutPage() {
                     {/* Line */}
                     <div className="relative w-1 h-full bg-gray-600 rounded">
                       {/* Line Circle */}
-                      <div className="absolute h-5 w-5 rounded-full bg-white ring-4 ring-rose-500 -left-2"></div>
+                      <div className="absolute h-5 w-5 rounded-full bg-gradient-to-r from-purple-200 to-red-200 ring-4 ring-rose-500 -left-2"></div>
                     </div>
                   </motion.div>
                   {/* Right */}
@@ -251,12 +251,12 @@ export default function AboutPage() {
                     {/* Line */}
                     <div className="relative w-1 h-full bg-gray-600 rounded">
                       {/* Line Circle */}
-                      <div className="absolute h-5 w-5 rounded-full bg-white ring-4 ring-rose-500 -left-2"></div>
+                      <div className="absolute h-5 w-5 rounded-full bg-gradient-to-r from-purple-200 to-red-200 ring-4 ring-rose-500 -left-2"></div>
                     </div>
                   </motion.div>
                   {/* Right */}
                   <motion.div initial={{ y: "300px" }} animate={isProjectListItemInView4 ? { y: 0 } : {}} transition={{ delay: 0.6 }} className="w-1/3">
-                    <h6 className="bg-white p-3 font-semibold rounded-b-lg rounded-s-lg">Evently</h6>
+                    <h6 className="bg-gradient-to-r from-purple-200 to-red-200 p-3 font-semibold rounded-b-lg rounded-s-lg">Evently</h6>
                     <p className="p-3 text-sm italic">Web-application to post your events and buy the events you like</p>
                     <span className="p-3 text-rose-500 font-semibold text-sm">January 2024</span>
                   </motion.div>
@@ -265,7 +265,7 @@ export default function AboutPage() {
                 <div ref={projectListItemRef5} className="flex gap-5 h-48">
                   {/* Left */}
                   <motion.div initial={{ y: "300px" }} animate={isProjectListItemInView5 ? { y: 0 } : {}} transition={{ delay: 0.8 }} className="w-1/3 ">
-                    <h6 className="bg-white p-3 font-semibold rounded-b-lg rounded-s-lg">CMS-Dashboard</h6>
+                    <h6 className="bg-gradient-to-r from-purple-200 to-red-200 p-3 font-semibold rounded-b-lg rounded-s-lg">CMS-Dashboard</h6>
                     <p className="p-3 text-sm italic">Web-application CMS dashboard</p>
                     <span className="p-3 text-rose-500 font-semibold text-sm">December 2023</span>
                   </motion.div>
@@ -274,7 +274,7 @@ export default function AboutPage() {
                     {/* Line */}
                     <div className="relative w-1 h-full bg-gray-600 rounded">
                       {/* Line Circle */}
-                      <div className="absolute h-5 w-5 rounded-full bg-white ring-4 ring-rose-500 -left-2"></div>
+                      <div className="absolute h-5 w-5 rounded-full bg-gradient-to-r from-purple-200 to-red-200 ring-4 ring-rose-500 -left-2"></div>
                     </div>
                   </motion.div>
                   {/* Right */}
