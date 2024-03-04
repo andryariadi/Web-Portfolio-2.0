@@ -189,9 +189,9 @@ export default function AboutPage() {
                 <div ref={projectListItemRef1} className="flex gap-5 h-48">
                   {/* Left */}
                   <motion.div initial={{ y: "300px" }} animate={isProjectListItemInView1 ? { y: 0 } : {}} transition={{ delay: 0.3 }} className="w-1/3 ">
-                    <h6 className="bg-gradient-to-r from-purple-200 to-red-200 p-3 font-semibold rounded-b-lg rounded-s-lg">iBikez</h6>
-                    <p className="p-3 text-sm italic">Web-application (e-commerce) to buy the cycle you like</p>
-                    <span className="p-3 text-rose-500 font-semibold text-sm">February 2024</span>
+                    <h6 className="bg-gradient-to-r from-purple-200 to-red-200 p-3 md:p-4 font-semibold rounded-b-lg rounded-s-lg md:text-2xl lg:text-xl 2xl:text-lg">iBikez</h6>
+                    <p className="p-3 text-xs sm:text-base md:text-lg 2xl:text-sm italic">Web-application (e-commerce) to buy the cycle you like</p>
+                    <span className="p-3 text-rose-500 font-semibold text-[11px] sm:text-xs md:text-lg xl:text-base 2xl:text-sm">February 2024</span>
                   </motion.div>
                   {/* Center */}
                   <motion.div initial={{ y: "300px" }} animate={isProjectListItemInView1 ? { y: 0 } : {}} transition={{ delay: 0.3 }} className="w-[10%] flex items-center justify-center">
@@ -218,18 +218,18 @@ export default function AboutPage() {
                   </motion.div>
                   {/* Right */}
                   <motion.div initial={{ y: "300px" }} animate={isProjectListItemInView2 ? { y: 0 } : {}} transition={{ delay: 0.4 }} className="w-1/3">
-                    <h6 className="bg-gradient-to-r from-purple-200 to-red-200 p-3 font-semibold rounded-b-lg rounded-s-lg">iBlog</h6>
-                    <p className="p-3 text-sm italic">Web-application to post your blog</p>
-                    <span className="p-3 text-rose-500 font-semibold text-sm">February 2024</span>
+                    <h6 className="bg-gradient-to-r from-purple-200 to-red-200 p-3 md:p-4 font-semibold rounded-b-lg rounded-s-lg md:text-2xl lg:text-xl 2xl:text-lg">iBlog</h6>
+                    <p className="p-3 text-xs sm:text-base md:text-lg 2xl:text-sm italic">Web-application to post your blog</p>
+                    <span className="p-3 text-rose-500 font-semibold text-[10px] sm:text-xs md:text-lg xl:text-base 2xl:text-sm">February 2024</span>
                   </motion.div>
                 </div>
                 {/* Project list item */}
                 <div ref={projectListItemRef3} className="flex gap-5 h-48">
                   {/* Left */}
                   <motion.div initial={{ y: "300px" }} animate={isProjectListItemInView3 ? { y: 0 } : {}} transition={{ delay: 0.5 }} className="w-1/3 ">
-                    <h6 className="bg-gradient-to-r from-purple-200 to-red-200 p-3 font-semibold rounded-b-lg rounded-s-lg">uDo</h6>
-                    <p className="p-3 text-sm italic">Web-application to list your activities</p>
-                    <span className="p-3 text-rose-500 font-semibold text-sm">February 2024</span>
+                    <h6 className="bg-gradient-to-r from-purple-200 to-red-200 p-3 md:p-4 font-semibold rounded-b-lg rounded-s-lg md:text-2xl lg:text-xl 2xl:text-lg">uDo</h6>
+                    <p className="p-3 text-xs sm:text-base md:text-lg 2xl:text-sm italic">Web-application to list your activities</p>
+                    <span className="p-3 text-rose-500 font-semibold text-[10px] sm:text-xs md:text-lg xl:text-base 2xl:text-sm">February 2024</span>
                   </motion.div>
                   {/* Center */}
                   <motion.div initial={{ y: "300px" }} animate={isProjectListItemInView3 ? { y: 0 } : {}} transition={{ delay: 0.5 }} className="w-[10%] flex items-center justify-center">
@@ -256,18 +256,18 @@ export default function AboutPage() {
                   </motion.div>
                   {/* Right */}
                   <motion.div initial={{ y: "300px" }} animate={isProjectListItemInView4 ? { y: 0 } : {}} transition={{ delay: 0.6 }} className="w-1/3">
-                    <h6 className="bg-gradient-to-r from-purple-200 to-red-200 p-3 font-semibold rounded-b-lg rounded-s-lg">Evently</h6>
-                    <p className="p-3 text-sm italic">Web-application to post your events and buy the events you like</p>
-                    <span className="p-3 text-rose-500 font-semibold text-sm">January 2024</span>
+                    <h6 className="bg-gradient-to-r from-purple-200 to-red-200 p-3 md:p-4 font-semibold rounded-b-lg rounded-s-lg md:text-2xl lg:text-xl 2xl:text-lg">Evently</h6>
+                    <p className="p-3 text-xs sm:text-base md:text-lg 2xl:text-sm italic">Web-application to post your events and buy the events you like</p>
+                    <span className="p-3 text-rose-500 font-semibold text-[10px] sm:text-xs md:text-lg xl:text-base 2xl:text-sm">January 2024</span>
                   </motion.div>
                 </div>
                 {/* Project list item */}
                 <div ref={projectListItemRef5} className="flex gap-5 h-48">
                   {/* Left */}
                   <motion.div initial={{ y: "300px" }} animate={isProjectListItemInView5 ? { y: 0 } : {}} transition={{ delay: 0.8 }} className="w-1/3 ">
-                    <h6 className="bg-gradient-to-r from-purple-200 to-red-200 p-3 font-semibold rounded-b-lg rounded-s-lg">CMS-Dashboard</h6>
-                    <p className="p-3 text-sm italic">Web-application CMS dashboard</p>
-                    <span className="p-3 text-rose-500 font-semibold text-sm">December 2023</span>
+                    <h6 className="bg-gradient-to-r from-purple-200 to-red-200 p-3 md:p-4 font-semibold rounded-b-lg rounded-s-lg md:text-2xl lg:text-xl 2xl:text-lg">CMS-Dashboard</h6>
+                    <p className="p-3 text-xs sm:text-base md:text-lg 2xl:text-sm italic">Web-application CMS dashboard</p>
+                    <span className="p-3 text-rose-500 font-semibold text-[10px] sm:text-xs md:text-lg xl:text-base 2xl:text-sm">December 2023</span>
                   </motion.div>
                   {/* Center */}
                   <motion.div initial={{ y: "300px" }} animate={isProjectListItemInView5 ? { y: 0 } : {}} transition={{ delay: 0.8 }} className="w-[10%] flex items-center justify-center">
@@ -284,7 +284,7 @@ export default function AboutPage() {
             </div>
           </div>
           {/* SVG Container */}
-          <div className="lg:block w-1/3 xl:w-1/2 sticky top-0 z-30">
+          <div className="hidden lg:block w-1/3 xl:w-1/2 sticky top-0 z-30">
             <BrainSvg scrollYProgress={scrollYProgress} />
           </div>
         </div>
