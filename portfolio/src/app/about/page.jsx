@@ -109,11 +109,11 @@ export default function AboutPage() {
   return (
     <>
       <motion.main className="h-full" initial={{ y: "-200vh" }} animate={{ y: "0%" }} transition={{ duration: 1 }}>
-        <div className="bg-amber-500 h-full overflow-scroll lg:flex" ref={containerRef}>
+        <div className="h-full overflow-y-scroll lg:flex" ref={containerRef}>
           {/* Text Container */}
-          <div className="bg-rose-500 p-4 sm:p-8 md:p-12 lg:p-20 xl:p-20 lg:pr-0 flex flex-col gap-24 md:gap-32 lg:gap-48 xl:gap-64 lg:w-2/3 xl:w-1/2">
+          <div className="p-4 sm:p-8 md:p-12 lg:p-20 xl:p-20 lg:pr-0 flex flex-col gap-24 md:gap-32 lg:gap-48 xl:gap-64 lg:w-2/3 xl:w-1/2">
             {/* Bio Container */}
-            <div className="bg-violet-500 flex flex-col justify-center gap-10 text-black">
+            <div className="flex flex-col justify-center gap-10 text-black">
               <motion.h1 variants={fadeIn("right", 0.2)} initial="hidden" whileInView={"show"} viewport={{ once: true, amount: 0.7 }} className="font-bold text-2xl">
                 Biography
               </motion.h1>
@@ -146,7 +146,7 @@ export default function AboutPage() {
               </motion.svg>
             </div>
             {/* Skill Container */}
-            <div className="bg-sky-500 flex flex-col justify-center gap-10 text-black" ref={skillRef}>
+            <div className="flex flex-col justify-center gap-10 text-black" ref={skillRef}>
               <motion.h1 initial={{ x: "-300px" }} animate={isSkillRefInView ? { x: 0 } : {}} transition={{ delay: 0.2 }} className="font-bold text-2xl">
                 Skills
               </motion.h1>
@@ -179,22 +179,22 @@ export default function AboutPage() {
               </motion.svg>
             </div>
             {/* Project Container */}
-            <div className="bg-fuchsia-500 flex flex-col justify-center gap-10 text-black pb-10" ref={projectRef}>
+            <div className="flex flex-col justify-center gap-10 text-black pb-10" ref={projectRef}>
               <motion.h1 initial={{ y: "300px" }} animate={isProjectRefInView ? { y: 0 } : {}} transition={{ delay: 0.2 }} className="font-bold text-2xl">
                 Projects
               </motion.h1>
               {/* Project Lists */}
-              <div className="bg-indigo-500">
+              <div className="">
                 {/* Project list item */}
                 <div ref={projectListItemRef1} className="flex gap-5 h-48">
                   {/* Left */}
-                  <motion.div initial={{ y: "300px" }} animate={isProjectListItemInView1 ? { y: 0 } : {}} transition={{ delay: 0.3 }} className="w-1/3 bg-teal-500">
+                  <motion.div initial={{ y: "300px" }} animate={isProjectListItemInView1 ? { y: 0 } : {}} transition={{ delay: 0.3 }} className="w-1/3 ">
                     <h6 className="bg-white p-3 font-semibold rounded-b-lg rounded-s-lg">iBikez</h6>
                     <p className="p-3 text-sm italic">Web-application (e-commerce) to buy the cycle you like</p>
                     <span className="p-3 text-rose-500 font-semibold text-sm">February 2024</span>
                   </motion.div>
                   {/* Center */}
-                  <motion.div initial={{ y: "300px" }} animate={isProjectListItemInView1 ? { y: 0 } : {}} transition={{ delay: 0.3 }} className="w-[10%] bg-rose-500 flex items-center justify-center">
+                  <motion.div initial={{ y: "300px" }} animate={isProjectListItemInView1 ? { y: 0 } : {}} transition={{ delay: 0.3 }} className="w-[10%] flex items-center justify-center">
                     {/* Line */}
                     <div className="relative w-1 h-full bg-gray-600 rounded">
                       {/* Line Circle */}
@@ -202,14 +202,14 @@ export default function AboutPage() {
                     </div>
                   </motion.div>
                   {/* Right */}
-                  <motion.div initial={{ y: "300px" }} animate={isProjectListItemInView1 ? { y: 0 } : {}} transition={{ delay: 0.3 }} className="w-1/3 bg-emerald-500"></motion.div>
+                  <motion.div initial={{ y: "300px" }} animate={isProjectListItemInView1 ? { y: 0 } : {}} transition={{ delay: 0.3 }} className="w-1/3"></motion.div>
                 </div>
                 {/* Project list item */}
                 <div ref={projectListItemRef2} className="flex gap-5 h-48">
                   {/* Left */}
-                  <motion.div initial={{ y: "300px" }} animate={isProjectListItemInView2 ? { y: 0 } : {}} transition={{ delay: 0.4 }} className="w-1/3 bg-teal-500"></motion.div>
+                  <motion.div initial={{ y: "300px" }} animate={isProjectListItemInView2 ? { y: 0 } : {}} transition={{ delay: 0.4 }} className="w-1/3 "></motion.div>
                   {/* Center */}
-                  <motion.div initial={{ y: "300px" }} animate={isProjectListItemInView2 ? { y: 0 } : {}} transition={{ delay: 0.4 }} className="w-[10%] flex items-center justify-center bg-rose-500">
+                  <motion.div initial={{ y: "300px" }} animate={isProjectListItemInView2 ? { y: 0 } : {}} transition={{ delay: 0.4 }} className="w-[10%] flex items-center justify-center">
                     {/* Line */}
                     <div className="relative w-1 h-full bg-gray-600 rounded">
                       {/* Line Circle */}
@@ -217,7 +217,7 @@ export default function AboutPage() {
                     </div>
                   </motion.div>
                   {/* Right */}
-                  <motion.div initial={{ y: "300px" }} animate={isProjectListItemInView2 ? { y: 0 } : {}} transition={{ delay: 0.4 }} className="w-1/3 bg-emerald-500">
+                  <motion.div initial={{ y: "300px" }} animate={isProjectListItemInView2 ? { y: 0 } : {}} transition={{ delay: 0.4 }} className="w-1/3">
                     <h6 className="bg-white p-3 font-semibold rounded-b-lg rounded-s-lg">iBlog</h6>
                     <p className="p-3 text-sm italic">Web-application to post your blog</p>
                     <span className="p-3 text-rose-500 font-semibold text-sm">February 2024</span>
@@ -226,13 +226,13 @@ export default function AboutPage() {
                 {/* Project list item */}
                 <div ref={projectListItemRef3} className="flex gap-5 h-48">
                   {/* Left */}
-                  <motion.div initial={{ y: "300px" }} animate={isProjectListItemInView3 ? { y: 0 } : {}} transition={{ delay: 0.5 }} className="w-1/3 bg-teal-500">
+                  <motion.div initial={{ y: "300px" }} animate={isProjectListItemInView3 ? { y: 0 } : {}} transition={{ delay: 0.5 }} className="w-1/3 ">
                     <h6 className="bg-white p-3 font-semibold rounded-b-lg rounded-s-lg">uDo</h6>
                     <p className="p-3 text-sm italic">Web-application to list your activities</p>
                     <span className="p-3 text-rose-500 font-semibold text-sm">February 2024</span>
                   </motion.div>
                   {/* Center */}
-                  <motion.div initial={{ y: "300px" }} animate={isProjectListItemInView3 ? { y: 0 } : {}} transition={{ delay: 0.5 }} className="w-[10%] flex items-center justify-center bg-rose-500">
+                  <motion.div initial={{ y: "300px" }} animate={isProjectListItemInView3 ? { y: 0 } : {}} transition={{ delay: 0.5 }} className="w-[10%] flex items-center justify-center">
                     {/* Line */}
                     <div className="relative w-1 h-full bg-gray-600 rounded">
                       {/* Line Circle */}
@@ -240,14 +240,14 @@ export default function AboutPage() {
                     </div>
                   </motion.div>
                   {/* Right */}
-                  <motion.div initial={{ y: "300px" }} animate={isProjectListItemInView3 ? { y: 0 } : {}} transition={{ delay: 0.5 }} className="w-1/3 bg-emerald-500"></motion.div>
+                  <motion.div initial={{ y: "300px" }} animate={isProjectListItemInView3 ? { y: 0 } : {}} transition={{ delay: 0.5 }} className="w-1/3"></motion.div>
                 </div>
                 {/* Project list item */}
                 <div ref={projectListItemRef4} className="flex gap-5 h-48">
                   {/* Left */}
-                  <motion.div initial={{ y: "300px" }} animate={isProjectListItemInView4 ? { y: 0 } : {}} transition={{ delay: 0.6 }} className="w-1/3 bg-teal-500"></motion.div>
+                  <motion.div initial={{ y: "300px" }} animate={isProjectListItemInView4 ? { y: 0 } : {}} transition={{ delay: 0.6 }} className="w-1/3 "></motion.div>
                   {/* Center */}
-                  <motion.div initial={{ y: "300px" }} animate={isProjectListItemInView4 ? { y: 0 } : {}} transition={{ delay: 0.6 }} className="w-[10%] flex items-center justify-center bg-rose-500">
+                  <motion.div initial={{ y: "300px" }} animate={isProjectListItemInView4 ? { y: 0 } : {}} transition={{ delay: 0.6 }} className="w-[10%] flex items-center justify-center">
                     {/* Line */}
                     <div className="relative w-1 h-full bg-gray-600 rounded">
                       {/* Line Circle */}
@@ -255,7 +255,7 @@ export default function AboutPage() {
                     </div>
                   </motion.div>
                   {/* Right */}
-                  <motion.div initial={{ y: "300px" }} animate={isProjectListItemInView4 ? { y: 0 } : {}} transition={{ delay: 0.6 }} className="w-1/3 bg-emerald-500">
+                  <motion.div initial={{ y: "300px" }} animate={isProjectListItemInView4 ? { y: 0 } : {}} transition={{ delay: 0.6 }} className="w-1/3">
                     <h6 className="bg-white p-3 font-semibold rounded-b-lg rounded-s-lg">Evently</h6>
                     <p className="p-3 text-sm italic">Web-application to post your events and buy the events you like</p>
                     <span className="p-3 text-rose-500 font-semibold text-sm">January 2024</span>
@@ -264,13 +264,13 @@ export default function AboutPage() {
                 {/* Project list item */}
                 <div ref={projectListItemRef5} className="flex gap-5 h-48">
                   {/* Left */}
-                  <motion.div initial={{ y: "300px" }} animate={isProjectListItemInView5 ? { y: 0 } : {}} transition={{ delay: 0.8 }} className="w-1/3 bg-teal-500">
+                  <motion.div initial={{ y: "300px" }} animate={isProjectListItemInView5 ? { y: 0 } : {}} transition={{ delay: 0.8 }} className="w-1/3 ">
                     <h6 className="bg-white p-3 font-semibold rounded-b-lg rounded-s-lg">CMS-Dashboard</h6>
                     <p className="p-3 text-sm italic">Web-application CMS dashboard</p>
                     <span className="p-3 text-rose-500 font-semibold text-sm">December 2023</span>
                   </motion.div>
                   {/* Center */}
-                  <motion.div initial={{ y: "300px" }} animate={isProjectListItemInView5 ? { y: 0 } : {}} transition={{ delay: 0.8 }} className="w-[10%] bg-rose-500 flex items-center justify-center">
+                  <motion.div initial={{ y: "300px" }} animate={isProjectListItemInView5 ? { y: 0 } : {}} transition={{ delay: 0.8 }} className="w-[10%] flex items-center justify-center">
                     {/* Line */}
                     <div className="relative w-1 h-full bg-gray-600 rounded">
                       {/* Line Circle */}
@@ -278,13 +278,13 @@ export default function AboutPage() {
                     </div>
                   </motion.div>
                   {/* Right */}
-                  <motion.div initial={{ y: "300px" }} animate={isProjectListItemInView5 ? { y: 0 } : {}} transition={{ delay: 0.8 }} className="w-1/3 bg-emerald-500"></motion.div>
+                  <motion.div initial={{ y: "300px" }} animate={isProjectListItemInView5 ? { y: 0 } : {}} transition={{ delay: 0.8 }} className="w-1/3"></motion.div>
                 </div>
               </div>
             </div>
           </div>
           {/* SVG Container */}
-          <div className="bg-teal-500 lg:block w-1/3 xl:w-1/2 sticky top-0 z-30">
+          <div className="lg:block w-1/3 xl:w-1/2 sticky top-0 z-30">
             <BrainSvg scrollYProgress={scrollYProgress} />
           </div>
         </div>
