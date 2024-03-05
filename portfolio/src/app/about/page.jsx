@@ -116,11 +116,11 @@ export default function AboutPage() {
             {/* Bio Container */}
             <div className="flex flex-col justify-center gap-10 text-black">
               {/* Title  */}
-              <motion.h1 variants={fadeIn("right", 0.2)} initial="hidden" whileInView={"show"} viewport={{ once: true, amount: 0.7 }} className="font-aldrich font-bold text-[#739248] text-2xl">
+              <motion.h1 variants={fadeIn("right", 0.2)} initial="hidden" whileInView={"show"} viewport={{ once: true, amount: 0.7 }} className="font-aldrich font-bold text-[#739248] text-2xl md:text-4xl">
                 Biography
               </motion.h1>
               {/* Description */}
-              <motion.p variants={fadeIn("right", 0.4)} initial="hidden" whileInView={"show"} viewport={{ once: true, amount: 0.7 }} className="font-rajdhani text-lg font-semibold text-justify">
+              <motion.p variants={fadeIn("right", 0.4)} initial="hidden" whileInView={"show"} viewport={{ once: true, amount: 0.7 }} className="font-rajdhani text-lg md:text-xl font-semibold text-justify">
                 I graduated from the Bachelor of Mechanical Engineering program at Malang State University. I previously worked as a HSE and now I am transitioning to a career in the IT field as a Software Developer. Following the
                 completion of the Fullstack Javascript bootcamp, I have acquired the abilities and skills required to develop web and mobile applications.
               </motion.p>
@@ -128,27 +128,27 @@ export default function AboutPage() {
               <div className="flex items-center gap-x-5">
                 <div className="h-full flex flex-col items-start justify-center">
                   <div>
-                    <CountUp start={0} end={11} duration={8} className="font-aldrich font-bold text-5xl text-[#739248]" />
+                    <CountUp start={0} end={11} duration={8} className="font-aldrich font-bold text-4xl md:text-5xl lg:text-4xl text-[#739248]" />
                   </div>
                   <div>
-                    <p className="font-aldrich font-semibold text-sm text-[#739248]">
+                    <p className="font-aldrich font-semibold text-xs md:text-lg lg:text-base text-[#739248]">
                       Projects <br /> Complated
                     </p>
                   </div>
                 </div>
                 <div className="h-full flex flex-col items-start justify-center">
                   <div>
-                    <CountUp start={0} end={13} duration={8} className="font-aldrich font-bold text-5xl text-[#739248]" />
+                    <CountUp start={0} end={13} duration={8} className="font-aldrich font-bold text-4xl md:text-5xl lg:text-4xl text-[#739248]" />
                   </div>
                   <div>
-                    <p className="font-aldrich font-semibold text-sm text-[#739248]">
+                    <p className="font-aldrich font-semibold text-xs md:text-lg lg:text-base text-[#739248]">
                       Software Engineering <br /> Certificate
                     </p>
                   </div>
                 </div>
               </div>
               {/* Quote */}
-              <motion.blockquote variants={fadeIn("right", 0.6)} initial="hidden" whileInView={"show"} viewport={{ once: true, amount: 0.7 }} className="font-rajdhani font-medium italic">
+              <motion.blockquote variants={fadeIn("right", 0.6)} initial="hidden" whileInView={"show"} viewport={{ once: true, amount: 0.7 }} className="font-rajdhani font-medium italic md:text-xl lg:text-lg xl:text-base">
                 From mechanics to code, bridging the gap between engineering and software. Evolution is the key, innovation is the goal.
               </motion.blockquote>
               {/* SVG Scroll */}
@@ -173,13 +173,13 @@ export default function AboutPage() {
             </div>
             {/* Skill Container */}
             <div className="flex flex-col justify-center gap-10 text-black" ref={skillRef}>
-              <motion.h1 initial={{ x: "-300px" }} animate={isSkillRefInView ? { x: 0 } : {}} transition={{ delay: 0.2 }} className="font-aldrich font-bold text-[#739248] text-2xl">
+              <motion.h1 initial={{ x: "-300px" }} animate={isSkillRefInView ? { x: 0 } : {}} transition={{ delay: 0.2 }} className="font-aldrich font-bold text-[#739248] text-2xl md:text-4xl">
                 Skills
               </motion.h1>
               {/* Skill Lists */}
               <motion.div initial={{ x: "-300px" }} animate={isSkillRefInView ? { x: 0 } : {}} transition={{ delay: 0.3 }} className="flex gap-5 flex-wrap">
                 {skills.map((skill) => (
-                  <div key={skill.id} className="font-rajdhani font-medium p-2 rounded text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black transition-all duration-300">
+                  <div key={skill.id} className="font-rajdhani font-medium p-2 rounded text-sm md:text-lg lg:text-base cursor-pointer bg-black text-white hover:bg-white hover:text-black transition-all duration-300">
                     {skill.name}
                   </div>
                 ))}
@@ -206,7 +206,7 @@ export default function AboutPage() {
             </div>
             {/* Project Container */}
             <div className="flex flex-col justify-center gap-10 text-black pb-10" ref={projectRef}>
-              <motion.h1 initial={{ y: "300px" }} animate={isProjectRefInView ? { y: 0 } : {}} transition={{ delay: 0.2 }} className="font-aldrich font-bold text-[#739248] text-2xl">
+              <motion.h1 initial={{ y: "300px" }} animate={isProjectRefInView ? { y: 0 } : {}} transition={{ delay: 0.2 }} className="font-aldrich font-bold text-[#739248] text-2xl md:text-4xl">
                 Projects
               </motion.h1>
               {/* Project Lists */}
@@ -215,9 +215,9 @@ export default function AboutPage() {
                 <div ref={projectListItemRef1} className="flex gap-5 h-48">
                   {/* Left */}
                   <motion.div initial={{ y: "300px" }} animate={isProjectListItemInView1 ? { y: 0 } : {}} transition={{ delay: 0.3 }} className="w-1/3 ">
-                    <h6 className="bg-gradient-to-r from-purple-200 to-red-200 p-3 md:p-4 font-semibold rounded-b-lg rounded-s-lg md:text-2xl lg:text-xl 2xl:text-lg font-aldrich text-slate-900">iBikez</h6>
-                    <p className="p-3 text-xs sm:text-base md:text-lg 2xl:text-sm italic font-rajdhani font-medium">Web-application (e-commerce) to buy the cycle you like</p>
-                    <span className="p-3 text-rose-500 font-semibold text-[11px] sm:text-xs md:text-lg xl:text-base 2xl:text-sm font-aldrich">February 2024</span>
+                    <h6 className="bg-gradient-to-r from-purple-200 to-red-200 p-3 md:p-4 font-semibold rounded-b-lg rounded-s-lg text-sm md:text-2xl lg:text-xl 2xl:text-lg font-aldrich text-slate-900">iBikez</h6>
+                    <p className="p-3 text-xs sm:text-base md:text-xl lg:text-lg 2xl:text-sm italic font-rajdhani font-medium">Web-application (e-commerce) to buy the cycle you like</p>
+                    <span className="p-3 text-rose-500 font-semibold text-[11px] sm:text-xs md:text-xl lg:text-lg xl:text-base 2xl:text-sm font-aldrich">February 2024</span>
                   </motion.div>
                   {/* Center */}
                   <motion.div initial={{ y: "300px" }} animate={isProjectListItemInView1 ? { y: 0 } : {}} transition={{ delay: 0.3 }} className="w-[10%] flex items-center justify-center">
@@ -244,18 +244,18 @@ export default function AboutPage() {
                   </motion.div>
                   {/* Right */}
                   <motion.div initial={{ y: "300px" }} animate={isProjectListItemInView2 ? { y: 0 } : {}} transition={{ delay: 0.4 }} className="w-1/3">
-                    <h6 className="bg-gradient-to-r from-purple-200 to-red-200 p-3 md:p-4 font-semibold rounded-b-lg rounded-s-lg md:text-2xl lg:text-xl 2xl:text-lg font-aldrich text-slate-900">iBlog</h6>
-                    <p className="p-3 text-xs sm:text-base md:text-lg 2xl:text-sm italic font-rajdhani font-medium">Web-application to post your blog</p>
-                    <span className="p-3 text-rose-500 font-semibold text-[10px] sm:text-xs md:text-lg xl:text-base 2xl:text-sm font-aldrich">February 2024</span>
+                    <h6 className="bg-gradient-to-r from-purple-200 to-red-200 p-3 md:p-4 font-semibold rounded-b-lg rounded-s-lg text-sm md:text-2xl lg:text-xl 2xl:text-lg font-aldrich text-slate-900">iBlog</h6>
+                    <p className="p-3 text-xs sm:text-base md:text-xl lg:text-lg 2xl:text-sm italic font-rajdhani font-medium">Web-application to post your blog</p>
+                    <span className="p-3 text-rose-500 font-semibold text-[10px] sm:text-xs md:text-xl lg:text-lg xl:text-base 2xl:text-sm font-aldrich">February 2024</span>
                   </motion.div>
                 </div>
                 {/* Project list item */}
                 <div ref={projectListItemRef3} className="flex gap-5 h-48">
                   {/* Left */}
                   <motion.div initial={{ y: "300px" }} animate={isProjectListItemInView3 ? { y: 0 } : {}} transition={{ delay: 0.5 }} className="w-1/3 ">
-                    <h6 className="bg-gradient-to-r from-purple-200 to-red-200 p-3 md:p-4 font-semibold rounded-b-lg rounded-s-lg md:text-2xl lg:text-xl 2xl:text-lg font-aldrich text-slate-900">uDo</h6>
-                    <p className="p-3 text-xs sm:text-base md:text-lg 2xl:text-sm italic font-rajdhani font-medium">Web-application to list your activities</p>
-                    <span className="p-3 text-rose-500 font-semibold text-[10px] sm:text-xs md:text-lg xl:text-base 2xl:text-sm font-aldrich">February 2024</span>
+                    <h6 className="bg-gradient-to-r from-purple-200 to-red-200 p-3 md:p-4 font-semibold rounded-b-lg rounded-s-lg text-sm md:text-2xl lg:text-xl 2xl:text-lg font-aldrich text-slate-900">uDo</h6>
+                    <p className="p-3 text-xs sm:text-base md:text-xl lg:text-lg 2xl:text-sm italic font-rajdhani font-medium">Web-application to list your activities</p>
+                    <span className="p-3 text-rose-500 font-semibold text-[10px] sm:text-xs md:text-xl lg:text-lg xl:text-base 2xl:text-sm font-aldrich">February 2024</span>
                   </motion.div>
                   {/* Center */}
                   <motion.div initial={{ y: "300px" }} animate={isProjectListItemInView3 ? { y: 0 } : {}} transition={{ delay: 0.5 }} className="w-[10%] flex items-center justify-center">
@@ -282,18 +282,18 @@ export default function AboutPage() {
                   </motion.div>
                   {/* Right */}
                   <motion.div initial={{ y: "300px" }} animate={isProjectListItemInView4 ? { y: 0 } : {}} transition={{ delay: 0.6 }} className="w-1/3">
-                    <h6 className="bg-gradient-to-r from-purple-200 to-red-200 p-3 md:p-4 font-semibold rounded-b-lg rounded-s-lg md:text-2xl lg:text-xl 2xl:text-lg font-aldrich text-slate-900">Evently</h6>
-                    <p className="p-3 text-xs sm:text-base md:text-lg 2xl:text-sm italic font-rajdhani font-medium">Web-application to post your events and buy the events you like</p>
-                    <span className="p-3 text-rose-500 font-semibold text-[10px] sm:text-xs md:text-lg xl:text-base 2xl:text-sm font-aldrich">January 2024</span>
+                    <h6 className="bg-gradient-to-r from-purple-200 to-red-200 p-3 md:p-4 font-semibold rounded-b-lg rounded-s-lg text-sm md:text-2xl lg:text-xl 2xl:text-lg font-aldrich text-slate-900">Evently</h6>
+                    <p className="p-3 text-xs sm:text-base md:text-xl lg:text-lg 2xl:text-sm italic font-rajdhani font-medium">Web-application to post your events and buy the events you like</p>
+                    <span className="p-3 text-rose-500 font-semibold text-[10px] sm:text-xs md:text-xl lg:text-lg xl:text-base 2xl:text-sm font-aldrich">January 2024</span>
                   </motion.div>
                 </div>
                 {/* Project list item */}
                 <div ref={projectListItemRef5} className="flex gap-5 h-48">
                   {/* Left */}
                   <motion.div initial={{ y: "300px" }} animate={isProjectListItemInView5 ? { y: 0 } : {}} transition={{ delay: 0.8 }} className="w-1/3 ">
-                    <h6 className="bg-gradient-to-r from-purple-200 to-red-200 p-3 md:p-4 font-semibold rounded-b-lg rounded-s-lg md:text-2xl lg:text-xl 2xl:text-lg font-aldrich text-slate-900">CMS-Dashboard</h6>
-                    <p className="p-3 text-xs sm:text-base md:text-lg 2xl:text-sm italic font-rajdhani font-medium">Web-application CMS dashboard</p>
-                    <span className="p-3 text-rose-500 font-semibold text-[10px] sm:text-xs md:text-lg xl:text-base 2xl:text-sm font-aldrich">December 2023</span>
+                    <h6 className="bg-gradient-to-r from-purple-200 to-red-200 p-3 md:p-4 font-semibold rounded-b-lg rounded-s-lg text-sm md:text-2xl lg:text-xl 2xl:text-lg font-aldrich text-slate-900">CMS-Dashboard</h6>
+                    <p className="p-3 text-xs sm:text-base md:text-xl lg:text-lg 2xl:text-sm italic font-rajdhani font-medium">Web-application CMS dashboard</p>
+                    <span className="p-3 text-rose-500 font-semibold text-[10px] sm:text-xs md:text-xl lg:text-lg xl:text-base 2xl:text-sm font-aldrich">December 2023</span>
                   </motion.div>
                   {/* Center */}
                   <motion.div initial={{ y: "300px" }} animate={isProjectListItemInView5 ? { y: 0 } : {}} transition={{ delay: 0.8 }} className="w-[10%] flex items-center justify-center">
