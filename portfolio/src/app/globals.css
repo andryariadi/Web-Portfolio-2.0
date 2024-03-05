@@ -52,3 +52,32 @@
   /* padding: 0 70px 70px 70px; */
   border-radius: 28% 72% 25% 75% / 60% 47% 53% 40%;
 }
+
+/* scroll bar */
+.about-scroll {
+  --sb-track-color: #232e33;
+  --sb-thumb-color: #889771;
+  --sb-size: 10px;
+}
+
+.about-scroll::-webkit-scrollbar {
+  width: var(--sb-size);
+}
+
+.about-scroll::-webkit-scrollbar-track {
+  background: var(--sb-track-color);
+  border-radius: 12px;
+}
+
+.about-scroll::-webkit-scrollbar-thumb {
+  background: var(--sb-thumb-color);
+  border-radius: 12px;
+  border: 1px solid #232e33;
+}
+
+@supports not selector(::-webkit-scrollbar) {
+  .about-scroll {
+    scrollbar-color: var(--sb-thumb-color) var(--sb-track-color);
+  }
+}
+/* scroll bar */

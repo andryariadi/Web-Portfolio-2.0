@@ -67,7 +67,7 @@ export default function PortfolioPage() {
   return (
     <>
       <motion.main className="h-full" initial={{ y: "-200vh" }} animate={{ y: "0%" }} transition={{ duration: 1 }}>
-        <div className="bg-rose-500 relative h-[600vh]" ref={ref}>
+        <div className="relative h-[600vh]" ref={ref}>
           {/* Title Container */}
           <div className="bg-gradient-to-r from-purple-300 to-red-300 h-[calc(100vh-6rem)] flex items-center justify-center text-4xl md:text-6xl text-white font-bold">My Projects</div>
           {/* Project Container */}
