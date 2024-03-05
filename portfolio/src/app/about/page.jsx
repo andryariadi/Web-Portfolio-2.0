@@ -123,7 +123,7 @@ export default function AboutPage() {
                 completion of the Fullstack Javascript bootcamp, I have acquired the abilities and skills required to develop web and mobile applications.
               </motion.p>
               <motion.blockquote variants={fadeIn("right", 0.6)} initial="hidden" whileInView={"show"} viewport={{ once: true, amount: 0.7 }} className="italic">
-                "From mechanics to code, bridging the gap between engineering and software. Evolution is the key, innovation is the goal"
+                From mechanics to code, bridging the gap between engineering and software. Evolution is the key, innovation is the goal
               </motion.blockquote>
               {/* SVG Scroll */}
               <motion.svg

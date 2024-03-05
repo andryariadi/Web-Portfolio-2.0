@@ -15,8 +15,8 @@ export default function Home() {
           </motion.div>
         </div>
         <div className="h-[70%] lg:h-full lg:w-[71%] flex flex-col items-center justify-center gap-3 md:gap-8 lg:gap-10 text-black">
-          <motion.h1 variants={fadeIn("up", 0.3)} initial="hidden" whileInView={"show"} viewport={{ once: false, amount: 0.7 }} className="text-slate-900 text-3xl sm:text-4xl md:text-7xl lg:text-6xl 2xl:text-7xl font-bold w-full">
-            Hi, I'm <span className="bg-gradient-to-r from-slate-900 to-[#739248] text-transparent bg-clip-text">Andry Ariadi</span>
+          <motion.h1 variants={fadeIn("up", 0.3)} initial="hidden" whileInView={"show"} viewport={{ once: false, amount: 0.7 }} className="text-slate-900 text-3xl sm:text-4xl md:text-6xl 2xl:text-7xl font-bold w-full">
+            Hi, I am <span className="bg-gradient-to-r from-slate-900 to-[#739248] text-transparent bg-clip-text">Andry Ariadi</span>
           </motion.h1>
           <motion.div variants={fadeIn("up", 0.5)} initial="hidden" whileInView={"show"} viewport={{ once: false, amount: 0.7 }} className="flex items-center gap-2  w-full font-semibold uppercase leading-[1]">
             <h2 className="text-slate-900 text-lg sm:text-xl md:text-4xl 2xl:text-5xl">I am a</h2>
