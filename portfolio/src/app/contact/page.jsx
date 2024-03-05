@@ -57,7 +57,7 @@ export default function ContactPage() {
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ duration: 3, repeat: Infinity, delay: index * 0.1 }}
-                  className="bg-gradient-to-r from-[#C290FF] to-rose-300 text-transparent bg-clip-text mr-[5px]"
+                  className="bg-gradient-to-r from-[#C290FF] to-rose-300 text-transparent bg-clip-text mr-[5px] font-aldrich"
                 >
                   {char}
                 </motion.span>
@@ -70,14 +70,14 @@ export default function ContactPage() {
             onSubmit={sendEmail}
             className="bg-gradient-to-r from-purple-200 to-red-200 h-1/2 lg:h-full w-full md:w-1/2 xl:w-[55%] 2xl:w-1/2 rounded-xl text-xl flex flex-col justify-center gap-3 md:gap-4 xl:gap-8 2xl:gap-8 p-10 md:p-8 lg:p-10 2xl:p-16"
           >
-            <span className="w-full text-base md:text-xl lg:text-2xl">Dear Andry Ariadi</span>
+            <span className="w-full text-base md:text-xl lg:text-2xl font-aldrich">Dear Andry Ariadi</span>
             <textarea name="user_message" rows="6" className="bg-transparent border-b-2 border-b-black outline-none resize-none"></textarea>
-            <span className="w-full text-base md:text-xl lg:text-2xl">My email address is:</span>
+            <span className="w-full text-base md:text-xl lg:text-2xl font-aldrich">My email address is:</span>
             <input name="user_email" type="text" className="bg-transparent border-b-2 border-b-black outline-none" />
-            <span className="w-full text-base md:text-xl lg:text-2xl">Regrads</span>
-            <button className="bg-purple-400 rounded font-semibold text-gray-600 p-2 md:p-3 lg:p-4 text-base md:text-lg lg:text-xl">Send</button>
-            {success && <span className="text-green-600 font-semibold text-xs md:text-base">Your message has been sent successfully!</span>}
-            {error && <span className="text-rose-600 font-semibold text-xs md:text-base">Something went wrong!</span>}
+            <span className="w-full text-base md:text-xl lg:text-2xl font-aldrich">Regrads</span>
+            <button className="bg-purple-400 rounded font-semibold text-gray-600 p-2 md:p-3 lg:p-4 text-base md:text-lg lg:text-xl font-rajdhani">Send</button>
+            {success && <span className="text-green-600 font-semibold text-xs md:text-base font-rajdhani">Your message has been sent successfully!</span>}
+            {error && <span className="text-rose-600 font-semibold text-xs md:text-base font-rajdhani">Something went wrong!</span>}
           </form>
         </div>
       </motion.main>

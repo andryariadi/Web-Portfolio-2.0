@@ -69,7 +69,9 @@ export default function PortfolioPage() {
       <motion.main className="h-full" initial={{ y: "-200vh" }} animate={{ y: "0%" }} transition={{ duration: 1 }}>
         <div className="relative h-[600vh]" ref={ref}>
           {/* Title Container */}
-          <div className="bg-gradient-to-r from-purple-300 to-red-300 h-[calc(100vh-6rem)] flex items-center justify-center text-4xl md:text-6xl text-white font-bold">My Projects</div>
+          <div className="bg-gradient-to-r from-purple-300 to-red-300 h-[calc(100vh-6rem)] flex items-center justify-center ">
+            <h1 className="text-4xl md:text-6xl font-bold font-aldrich bg-gradient-to-r from-amber-50 to-slate-200 text-transparent bg-clip-text">My Projects</h1>
+          </div>
           {/* Project Container */}
           <div className="sticky top-0 flex items-center gap-5 h-screen overflow-hidden">
             <motion.div style={{ x }} className="bg-gray-500 flex">
@@ -90,8 +92,8 @@ export default function PortfolioPage() {
                         </Link>
                       </div>
                     </div>
-                    <h1 className="m-auto font-bold text-xl md:text-3xl lg:text-4xl 2xl:text-5xl">{project.title}</h1>
-                    <p className="text-center m-auto w-[75%] md:w-full lg:text-xl">{project.desc}</p>
+                    <h1 className="m-auto font-bold text-xl md:text-3xl lg:text-4xl 2xl:text-5xl font-aldrich bg-gradient-to-r from-amber-50 to-slate-200 text-transparent bg-clip-text">{project.title}</h1>
+                    <p className="text-center m-auto w-[75%] md:w-full lg:text-xl font-rajdhani font-medium">{project.desc}</p>
                   </div>
                 </div>
               ))}
@@ -101,19 +103,19 @@ export default function PortfolioPage() {
         {/* Hire Me Container */}
         <div className="bg-gradient-to-r from-red-300 to-blue-300 h-[115dvh] w-full flex flex-col items-center justify-center gap-4">
           <div className="w-full h-full flex flex-col items-center justify-center mt-[6rem]">
-            <h1 className="text-2xl md:text-5xl lg:text-6xl text-black">Do you have a project?</h1>
+            <h1 className="text-2xl md:text-5xl lg:text-6xl text-black font-aldrich">Do you have a project ?</h1>
             <div className="relative">
-              <motion.svg animate={{ rotate: 360 }} transition={{ duration: 55, ease: "linear", repeat: Infinity }} viewBox="0 0 300 300" className="w-64 h-64 md:w-[400px] md:h-[400px]">
+              <motion.svg animate={{ rotate: 360 }} transition={{ duration: 55, ease: "linear", repeat: Infinity }} viewBox="0 0 300 300" className="w-64 h-64 md:w-[460px] md:h-[460px]">
                 <defs>
                   <path id="circlePath" d="M 150, 150 m -60, 0 a 60,60 0 0,1 120,0 a 60,60 0 0,1 -120,0 " />
                 </defs>
                 <text fill="#000">
-                  <textPath xlinkHref="#circlePath" className="text-[19.5px] leading-1">
+                  <textPath xlinkHref="#circlePath" className="text-[23px] leading-1 font-rajdhani font-semibold">
                     Frontend Developer and Web Developer
                   </textPath>
                 </text>
               </motion.svg>
-              <Link href="/contact" className="absolute top-0 left-0 right-0 bottom-0 m-auto bg-black w-16 h-[25%] md:w-28 md:h-28 text-xs md:text-lg text-white rounded-full flex items-center justify-center">
+              <Link href="/contact" className="absolute top-0 left-0 right-0 bottom-0 m-auto bg-black w-16 h-[25%] md:w-28 md:h-28 text-xs md:text-lg text-white rounded-full flex items-center justify-center font-rajdhani font-medium">
                 Hire Me
               </Link>
             </div>

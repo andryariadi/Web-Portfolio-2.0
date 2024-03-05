@@ -86,14 +86,14 @@ export default function Navbar() {
     <>
       <nav className="h-full flex items-center justify-between px-4 sm:px-8 md:px-12 lg:px-20 xl:px-48">
         {/* Nav Links */}
-        <div className="hidden md:flex items-center justify-center gap-5 xl:w-[36%]">
+        <div className="hidden md:flex items-center justify-center gap-5 xl:w-[36%] font-aldrich">
           {links.map((link) => (
             <NavLink key={link.title} link={link} />
           ))}
         </div>
         {/* Logo */}
         <div className="md:hidden lg:flex items-center xl:justify-center xl:w-[36%]">
-          <Link href="/" className="flex items-center justify-center gap-1 text-sm font-semibold bg-black rounded-md p-1">
+          <Link href="/" className="flex items-center justify-center gap-1 text-sm font-semibold font-aldrich bg-black rounded-md p-1">
             <span className="text-white">Andry</span>
             <span className="bg-white flex items-center justify-center w-12 h-8 rounded text-black">Ariadi</span>
           </Link>
@@ -132,7 +132,7 @@ export default function Navbar() {
             <motion.div variants={listVariants} initial="closed" animate="opened" className="absolute z-10 bg-gradient-to-b from-amber-100 to-slate-200 top-0 left-0 w-screen h-screen flex flex-col items-center justify-center gap-8">
               {links.map((link) => (
                 <motion.div variants={listItemVariants} key={link.title}>
-                  <Link href={link.url} className={`nav-link text-xl text-black font-semibold px-3 rounded-md ${pathName === link.url && "bg-black text-white"}`}>
+                  <Link href={link.url} className={`nav-link font-aldrich text-xl text-black font-semibold px-3 rounded-md ${pathName === link.url && "bg-black text-white"}`}>
                     {link.title}
                   </Link>
                 </motion.div>

@@ -9,9 +9,9 @@ module.exports = {
       },
     },
     fontFamily: {
-      primary: "Orbitron",
-      secondary: "Rajdhani",
-      tertiary: "Aldrich",
+      orbitron: ["var(--font-orbitron)"],
+      aldrich: ["var(--font-aldrich)"],
+      rajdhani: ["var(--font-rajdhani)"],
     },
   },
   plugins: [require("daisyui")],
