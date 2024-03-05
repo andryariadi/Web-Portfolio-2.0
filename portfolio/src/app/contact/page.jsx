@@ -75,9 +75,9 @@ export default function ContactPage() {
             <span className="w-full text-base md:text-xl lg:text-2xl font-aldrich">My email address is:</span>
             <input name="user_email" type="text" className="bg-transparent border-b-2 border-b-black outline-none" />
             <span className="w-full text-base md:text-xl lg:text-2xl font-aldrich">Regrads</span>
-            <button className="bg-purple-400 rounded font-semibold text-gray-600 p-2 md:p-3 lg:p-4 text-base md:text-lg lg:text-xl font-rajdhani">Send</button>
-            {success && <span className="text-green-600 font-semibold text-xs md:text-base font-rajdhani">Your message has been sent successfully!</span>}
-            {error && <span className="text-rose-600 font-semibold text-xs md:text-base font-rajdhani">Something went wrong!</span>}
+            <button className="bg-purple-400 rounded font-semibold text-gray-600 p-2 md:p-3 lg:p-4 text-base md:text-lg lg:text-2xl font-rajdhani">Send</button>
+            {success && <span className="text-green-600 font-semibold text-sm md:text-base lg:text-xl font-rajdhani">Your message has been sent successfully!</span>}
+            {error && <span className="text-rose-600 font-semibold text-sm md:text-base lg:text-xl font-rajdhani">Something went wrong!</span>}
           </form>
         </div>
       </motion.main>
