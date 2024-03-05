@@ -92,8 +92,8 @@ export default function PortfolioPage() {
                         </Link>
                       </div>
                     </div>
-                    <h1 className="m-auto font-bold text-xl md:text-3xl lg:text-4xl 2xl:text-5xl font-aldrich bg-gradient-to-r from-amber-50 to-slate-200 text-transparent bg-clip-text">{project.title}</h1>
-                    <p className="text-center m-auto w-[75%] md:w-full lg:text-xl font-rajdhani font-medium">{project.desc}</p>
+                    <h1 className="m-auto font-bold text-2xl md:text-4xl lg:text-5xl 2xl:text-5xl font-aldrich bg-gradient-to-r from-amber-50 to-slate-200 text-transparent bg-clip-text">{project.title}</h1>
+                    <p className="text-center m-auto w-[75%] md:w-full text-2xl font-rajdhani font-medium">{project.desc}</p>
                   </div>
                 </div>
               ))}
@@ -115,7 +115,7 @@ export default function PortfolioPage() {
                   </textPath>
                 </text>
               </motion.svg>
-              <Link href="/contact" className="absolute top-0 left-0 right-0 bottom-0 m-auto bg-black w-16 h-[25%] md:w-28 md:h-28 text-xs md:text-lg text-white rounded-full flex items-center justify-center font-rajdhani font-medium">
+              <Link href="/contact" className="absolute top-0 left-0 right-0 bottom-0 m-auto bg-black w-16 h-[25%] md:w-28 md:h-28 text-xs md:text-xl text-white rounded-full flex items-center justify-center font-rajdhani font-medium">
                 Hire Me
               </Link>
             </div>
